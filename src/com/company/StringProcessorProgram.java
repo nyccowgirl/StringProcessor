@@ -2,174 +2,85 @@ package com.company;
 
 /*
 Trang Hoang
-CS110B - Assignement 5B
+CS110B - Assignment 5B
  */
 
 import java.util.Scanner;
-import java.util.Arrays;
-
 
 public class StringProcessorProgram {
 
     public static void main(String[] args) {
+        String playAgain;
         Scanner input = new Scanner(System.in);
 
-        // Get user input
-//	    System.in.println("Enter a line of text: ");
-//        String str = input.nextLine();
-        String str1 = "One for the money, two for the show";
-        String str2 = "3 Blind Mice is one of my favorite songs.";
+        do {
 
-        // Temporary test string (to delete)
+            // Get user input
+            System.out.print("Enter a line of text: ");
+            String str = input.nextLine();
 
-        String test = str2;
+            // Test strings
+//            String str1 = "One for the money, two for the show";
+//            String str2 = "3 Blind Mice is one of my favorite songs.";
+//            String str3 = "Counting sheep from one, two, to three";
 
-        StringProcessor testStr = new StringProcessor(test);
+            StringProcessor testStr = new StringProcessor(str);
 
-        // The number of words
-        System.out.println("words: " + testStr.wordCount());
+            // The number of words
+            System.out.println("words: " + testStr.wordCount());
 
-        // The number of uppercase letters
-        System.out.println("uppercase: " + testStr.uppercaseCount());
+            // The number of uppercase letters
+            System.out.println("uppercase: " + testStr.uppercaseCount());
 
-        // The number of digit characters
+            // The number of digit characters
+            System.out.println("digits: " + testStr.digitCount());
 
-//        count = 0;
-//        count1 = count2 = 0;
+            // The number of words that are English words representing the ten digits
+            System.out.println("digit words: " + testStr.digitWordCount());
 
-//        for (int i = 0; i < str.length(); i++) {
-//            if (Character.isDigit(str.charAt(i))) {
-//                count++;
-//            }
-//        }
-//
-//        for (int i = 0; i < str1.length(); i++) {
-//            if (Character.isDigit(str1.charAt(i))) {
-//                count1++;
-//            }
-//        }
-//
-//        for (int i = 0; i < str2.length(); i++) {
-//            if (Character.isDigit(str2.charAt(i))) {
-//                count2++;
-//            }
-//        }
-//
-//        //        System.out.println("digits: " + count);
-//        System.out.println("digits: " + count1);
-//        System.out.println("digits: " + count2);
+            // The line with all spaces removed
+            System.out.println("line with whitespace removed: \"" + testStr.getNoSpaceString() + "\"");
 
-        // The number of words that are English words representing the ten digits
+            // The line with all vowels replaced by the dash character '-'
+            System.out.println("line with vowels replaced: \"" + testStr.getNoVowelString() + "\"");
 
-        //        count = 0;
-//        count1 = count2 = 0;
-//
-//        String[] digits = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
-//
-//        int index;
+            // The line with all English words for digits replaced by digit characters
+            System.out.println("line with digit words replaced: \"" + testStr.getNoDigitWordString() + "\"");
 
-//        str = str.toLowerCase();
-//        str1 = str1.toLowerCase();
-//        str2 = str2.toLowerCase();
+            // Ask user if he/she would like to enter another
+            System.out.print("do you want to enter another? ");
+            playAgain = input.nextLine();
 
-//        for (String digit: digits) {
-//            for (String s: token) {
-//                if (digit.equalsIgnoreCase(s)) {
-//                    count++;
-//                }
-//            }
-////            index = str1.indexOf(digit);
-////            System.out.println(digit + ": " + index);
-////
-////            while (index != -1) {
-////                index = str1.indexOf(digit, index + 1);
-////                System.out.println(index);
-////                count1++;
-////            }
-//        }
-
-//        for (String digit: digits) {
-//            for (String s: token1) {
-//                if (digit.equalsIgnoreCase(s)) {
-//                    count1++;
-//                }
-//            }
-//            index = str1.indexOf(digit);
-//            System.out.println(digit + ": " + index);
-//
-//            while (index != -1) {
-//                index = str1.indexOf(digit, index + 1);
-//                System.out.println(index);
-//                count1++;
-//            }
-//        }
-//
-//        for (String digit: digits) {
-//            for (String s: token2) {
-//                if (digit.equalsIgnoreCase(s)) {
-//                    count2++;
-//                }
-//            }
-//            index = str2.indexOf(digit);
-//            System.out.println(digit + ": " + index);
-//
-//            while (index != -1) {
-//                index = str2.indexOf(digit, index + 1);
-//                System.out.println(index);
-//                count2++;
-//            }
-//        }
-
-//        System.out.println("digit words: " + count);
-//        System.out.println("digit words: " + count1);
-//        System.out.println("digit words: " + count2);
-
-
-        // The line with all spaces removed
-
-//        StringBuilder newstr = new StringBuilder(str);
-        StringBuilder newstr1 = new StringBuilder(str1);
-        StringBuilder newstr2 = new StringBuilder(str2);
-
-//        index = newstr.indexOf(" ");
-//
-//        while (index != -1) {
-//            newstr1.replace(index, index + 1, "");
-//            index = newstr.indexOf(" ");
-//        }
-
-//        index = newstr1.indexOf(" ");
-//
-//        while (index != -1) {
-//            newstr1.replace(index, index + 1, "");
-//            index = newstr1.indexOf(" ");
-//        }
-//
-//        index = newstr2.indexOf(" ");
-//
-//        while (index != -1) {
-//            newstr2.replace(index, index + 1, "");
-//            index = newstr2.indexOf(" ");
-//        }
-//
-//        System.out.println("line with whitespace removed: \"" + newstr1 + "\"");
-//        System.out.println("line with whitespace removed: \"" + newstr2 + "\"");
-
-
-        // The line with all vowels replaced by the dash character '-'
-
-
-
-        //
-//
-//        for (String s: token1) {
-//            System.out.println(s);
-//        }
-//
-//        for (String s: token2) {
-//            System.out.println(s);
-//        }
-
-
+        } while (playAgain.equalsIgnoreCase("y"));
     }
 }
+
+/*
+Enter a line of text: One for the money, two for thw show
+words: 8
+uppercase: 1
+digits: 0
+digit words: 2
+line with whitespace removed: "Oneforthemoney,twoforthwshow"
+line with vowels replaced: "On- f-r th- m-n-y, tw- f-r thw sh-w"
+line with digit words replaced: "1 for the money, 2 for thw show"
+do you want to enter another? Y
+Enter a line of text: 3 Blind Mice is one of my favorite songs.
+words: 9
+uppercase: 2
+digits: 1
+digit words: 1
+line with whitespace removed: "3BlindMiceisoneofmyfavoritesongs."
+line with vowels replaced: "3 Bl-nd M-c- -s -n- -f my f-v-r-t- s-ngs."
+line with digit words replaced: "3 Blind Mice is 1 of my favorite songs."
+do you want to enter another? y
+Enter a line of text: Counting sheep from one, two, to three
+words: 7
+uppercase: 1
+digits: 0
+digit words: 3
+line with whitespace removed: "Countingsheepfromone,two,tothree"
+line with vowels replaced: "C--nt-ng sh--p fr-m -n-, tw-, t- thr--"
+line with digit words replaced: "Counting sheep from 1, 2, to 3"
+do you want to enter another? n
+ */
