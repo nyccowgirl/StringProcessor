@@ -138,7 +138,7 @@ public class StringProcessor {
      */
 
     public String getNoVowelString() {
-        char[] vowels = {'a', 'e', 'i', 'o', 'u'};
+        char[] vowels = {'a', 'A', 'e', 'E', 'i', 'I', 'o', 'O', 'u', 'U'};
         String newStr = str;
 
         for (char c: vowels) {
